@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shuaib Ud Dowla — AI-Assisted Software Builder</title>
+  <meta name="description" content="CSE undergraduate at MBSTU building practical software systems with Android, Firebase, AI agents, and LLM workflows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">Shuaib</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-toggle__track">
+        <span class="theme-toggle__icon theme-toggle__icon--sun"></span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon"></span>
+        <span class="theme-toggle__thumb"></span>
+      </span>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-glow hero-glow--1"></div>
+    <div class="hero-glow hero-glow--2"></div>
+
+    <div class="hero-content">
+      <div class="hero-copy">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for Internships &amp; Project Work
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-line name-line--small">Hi, I'm</span>
+          <span class="name-line name-line--big">Shuaib</span>
+          <span class="name-line name-line--big name-line--accent">Ud Dowla</span>
+        </h1>
+
+        <div class="hero-title">
+          <span class="title-prefix">{"role": "</span>
+          <span class="typewriter" id="typewriter"></span>
+          <span class="title-suffix">"}</span>
+        </div>
+
+        <p class="hero-tagline">
+          Building practical software systems with Android, Firebase,<br />
+          AI agents, and LLM workflows.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Curious Builder</span>
+          <span class="tag">Problem Solver</span>
+          <span class="tag">AI-Assisted Dev</span>
+          <span class="tag">Fast Learner</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn--primary">
+            <span>View Projects</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/shuaibuddowla" target="_blank" class="btn btn--outline">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="#contact" class="btn btn--ghost">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo-wrap">
+          <div class="photo-ring photo-ring--outer"></div>
+          <div class="photo-ring photo-ring--inner"></div>
+          <img src="assets/images/shuaib.png" alt="Shuaib Ud Dowla" class="hero-photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-intro">
+            I'm a <strong>Computer Science and Engineering undergraduate</strong> at Mawlana Bhashani Science and Technology University (MBSTU), with a passion for building practical software that solves real problems.
+          </p>
+          <p>
+            I use AI tools and agents as a core part of my development workflow — not just to write code, but to design, test, iterate, and ship working systems faster. My focus is on identifying real-world problems and building usable solutions around them.
+          </p>
+          <p>
+            I've built <strong>ClassMate</strong>, an Android/Firebase app actively used by 60+ CSE students at MBSTU, and <strong>PhantomTrace</strong>, an SMS-triggered lost-phone tracking utility. I'm also collaborating on an AI political analyzer using open LLM fine-tuning.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">60+</span>
+              <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Real Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">1st</span>
+              <span class="stat-label">Year CSE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="terminal-window">
+            <div class="terminal-bar">
+              <span class="t-dot t-red"></span>
+              <span class="t-dot t-yellow"></span>
+              <span class="t-dot t-green"></span>
+              <span class="t-title">shuaib@mbstu:~$</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cmd">whoami</span></div>
+              <div class="t-line t-output">Shuaib Ud Dowla</div>
+              <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cmd">cat role.txt</span></div>
+              <div class="t-line t-output">AI-Assisted Software Builder</div>
+              <div class="t-line t-output">Android/Firebase Developer</div>
+              <div class="t-line t-output">LLM Workflow Enthusiast</div>
+              <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cmd">cat location.txt</span></div>
+              <div class="t-line t-output">Santosh, Tangail, Bangladesh</div>
+              <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cmd">echo $STATUS</span></div>
+              <div class="t-line t-output t-green-text">Open to Internship Opportunities ✓</div>
+              <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cursor-blink">█</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+          </div>
+          <p class="skill-note">Intermediate level · Problem solving & algorithms</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>App Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Android</span>
+            <span class="skill-tag skill-tag--dim">Kotlin*</span>
+            <span class="skill-tag skill-tag--dim">Java*</span>
+          </div>
+          <p class="skill-note">*Project-based exposure via AI-assisted development</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Backend & Cloud</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Firebase Auth</span>
+            <span class="skill-tag">Firestore</span>
+            <span class="skill-tag">RTDB</span>
+            <span class="skill-tag">Firebase Storage</span>
+            <span class="skill-tag skill-tag--dim">Node.js*</span>
+            <span class="skill-tag skill-tag--dim">MongoDB*</span>
+          </div>
+          <p class="skill-note">*Project-based / currently learning</p>
+        </div>
+
+        <div class="skill-card reveal skill-card--featured">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <div class="featured-badge">⚡ Strongest Area</div>
+          <h3>AI & LLM</h3>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag--accent">AI-Assisted Dev</span>
+            <span class="skill-tag skill-tag--accent">AI Agent Workflows</span>
+            <span class="skill-tag">LLM Dataset Prep</span>
+            <span class="skill-tag">Hugging Face</span>
+            <span class="skill-tag">Python Fine-tuning</span>
+            <span class="skill-tag">AI Integration</span>
+          </div>
+          <p class="skill-note">Building working systems by leveraging AI agents effectively</p>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Tools & Platforms</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Android Studio</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Firebase Console</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Cybersecurity</h3>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag--learning">Learning 🔒</span>
+          </div>
+          <p class="skill-note">Member, MBSTU Cyber Security Club · Actively exploring</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PROJECTS ═══════════════════════════════ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- ClassMate — Featured -->
+      <div class="project-featured reveal">
+        <div class="project-featured-badge">
+          <span>🚀 Featured · 60+ Active Users</span>
+        </div>
+        <div class="project-featured-inner">
+          <div class="project-featured-info">
+            <div class="project-meta">
+              <span class="project-type">Android / Firebase</span>
+              <span class="project-status project-status--live">● Live</span>
+            </div>
+            <h3 class="project-name">ClassMate</h3>
+            <p class="project-desc">
+              A full-featured class notice, resource, and schedule management Android app built solo and actively used by 60+ CSE-22 students at MBSTU. Built to solve real communication and academic coordination problems within a university batch.
+            </p>
+            <div class="project-features">
+              <span class="feature-item">📢 Instant Notices</span>
+              <span class="feature-item">📅 Class Schedule</span>
+              <span class="feature-item">💬 Group Chat</span>
+              <span class="feature-item">📚 PDF Library</span>
+              <span class="feature-item">✅ Assignment Tracker</span>
+              <span class="feature-item">📊 Attendance QR</span>
+              <span class="feature-item">🔔 Push Notifications</span>
+              <span class="feature-item">📝 Comment System</span>
+            </div>
+            <div class="project-stack">
+              <span>Kotlin</span><span>Firebase</span><span>Firestore</span>
+              <span>FCM</span><span>Cloudinary</span><span>Android</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/shuaibuddowla/ClassMate" target="_blank" class="btn btn--sm btn--primary">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-featured-visual">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="mock-status-bar">
+                  <span>9:41</span>
+                  <span>●●●</span>
+                </div>
+                <div class="mock-header">ClassMate</div>
+                <div class="mock-notice-card">
+                  <div class="mock-notice-dot"></div>
+                  <div class="mock-notice-text">
+                    <div class="mock-line mock-line--title"></div>
+                    <div class="mock-line"></div>
+                    <div class="mock-line mock-line--short"></div>
+                  </div>
+                </div>
+                <div class="mock-notice-card">
+                  <div class="mock-notice-dot mock-notice-dot--accent"></div>
+                  <div class="mock-notice-text">
+                    <div class="mock-line mock-line--title"></div>
+                    <div class="mock-line"></div>
+                  </div>
+                </div>
+                <div class="mock-tabs">
+                  <span class="mock-tab mock-tab--active">Home</span>
+                  <span class="mock-tab">Schedule</span>
+                  <span class="mock-tab">Library</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+
+        <!-- PhantomTrace -->
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <div class="project-icon project-icon--phantom">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="project-meta">
+              <span class="project-type">Security / Utility</span>
+              <span class="project-status project-status--done">● Completed</span>
+            </div>
+          </div>
+          <h3 class="project-name">PhantomTrace</h3>
+          <p class="project-desc">
+            A lost-phone tracking app triggered by a secret SMS code. Upon receiving the correct code, it silently returns the device's GPS location and triggers a full-volume alarm — with a dual-fallback SMS system for reliability.
+          </p>
+          <div class="project-features project-features--sm">
+            <span class="feature-item">📍 SMS-Triggered Location</span>
+            <span class="feature-item">🔔 Full-Volume Alarm</span>
+            <span class="feature-item">🔁 Dual Fallback SMS</span>
+            <span class="feature-item">🔐 Secret Code Auth</span>
+          </div>
+          <div class="project-stack">
+            <span>Kotlin</span><span>Java</span><span>Firebase</span><span>SMS API</span>
+          </div>
+          <a href="https://github.com/shuaibuddowla/PhantomTrace" target="_blank" class="btn btn--sm btn--outline">
+            GitHub →
+          </a>
+        </div>
+
+        <!-- AI Political Analyzer -->
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <div class="project-icon project-icon--ai">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <div class="project-meta">
+              <span class="project-type">AI / LLM · Team</span>
+              <span class="project-status project-status--ongoing">● In Progress</span>
+            </div>
+          </div>
+          <h3 class="project-name">AI Political Analyzer</h3>
+          <p class="project-desc">
+            Collaborating with a 5–6 member team to fine-tune Gemma 4 for political discourse analysis. Responsible for dataset preparation — extracting and organizing political podcast subtitles from YouTube using Python and Hugging Face.
+          </p>
+          <div class="project-features project-features--sm">
+            <span class="feature-item">🤖 Gemma 4 Fine-tuning</span>
+            <span class="feature-item">📊 Dataset Preparation</span>
+            <span class="feature-item">🎙️ YouTube Subtitle Mining</span>
+          </div>
+          <div class="project-stack">
+            <span>Python</span><span>Hugging Face</span><span>Gemma 4</span><span>NLP</span>
+          </div>
+          <span class="btn btn--sm btn--ghost" style="cursor:default;">Ongoing · Private</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ACHIEVEMENTS ═══════════════════════════════ -->
+  <section class="section achievements" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Achievements &amp; Activities</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="achievements-grid">
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🏆</div>
+          <div class="achievement-content">
+            <h3>2nd Place — Breaking Code 2.0</h3>
+            <p>Programming contest organised by the Department of CSE, MBSTU. Competed in a team and secured 2nd position.</p>
+            <span class="achievement-year">2026</span>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🌏</div>
+          <div class="achievement-content">
+            <h3>ICPC Asia Dhaka Regional</h3>
+            <p>Participated in the ICPC Asia Dhaka Regional Preliminary Contest 2026, competing at a national level in competitive programming.</p>
+            <span class="achievement-year">2026</span>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🔐</div>
+          <div class="achievement-content">
+            <h3>MBSTU Cyber Security Club</h3>
+            <p>General Member of the MBSTU Cyber Security Club, actively exploring cybersecurity concepts and practices.</p>
+            <span class="achievement-year">Active</span>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🤝</div>
+          <div class="achievement-content">
+            <h3>Informal Student Leadership</h3>
+            <p>Known for taking initiative in batch-level problem-solving, supporting classmates during emergencies, and maintaining a responsible academic environment.</p>
+            <span class="achievement-year">Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ EDUCATION ═══════════════════════════════ -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="education-timeline">
+        <div class="edu-item reveal">
+          <div class="edu-dot edu-dot--active"></div>
+          <div class="edu-card">
+            <div class="edu-badge edu-badge--current">Current</div>
+            <h3>B.Sc. in Computer Science &amp; Engineering</h3>
+            <p class="edu-inst">Mawlana Bhashani Science and Technology University (MBSTU)</p>
+            <p class="edu-meta">Session 2024–2025 · Expected Graduation 2028–2029</p>
+            <p class="edu-detail">1st Year, 2nd Semester · CSE Department</p>
+          </div>
+        </div>
+
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-card">
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p class="edu-inst">Sherpur Government College, Sherpur</p>
+            <p class="edu-meta">Mymensingh Board · 2023</p>
+            <div class="edu-gpa">
+              <span class="gpa-label">GPA</span>
+              <span class="gpa-value">5.00 / 5.00</span>
+              <div class="gpa-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-card">
+            <h3>Secondary School Certificate (SSC)</h3>
+            <p class="edu-inst">Harindhara High School, Sherpur</p>
+            <p class="edu-meta">Mymensingh Board · 2021</p>
+            <div class="edu-gpa">
+              <span class="gpa-label">GPA</span>
+              <span class="gpa-value">5.00 / 5.00</span>
+              <div class="gpa-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ INTERESTS ═══════════════════════════════ -->
+  <section class="section interests" id="interests">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Beyond Code</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="interests-grid">
+        <div class="interest-item reveal"><span class="interest-icon">📷</span><span>Photography</span></div>
+        <div class="interest-item reveal"><span class="interest-icon">🏏</span><span>Cricket</span></div>
+        <div class="interest-item reveal"><span class="interest-icon">🧩</span><span>Problem Solving</span></div>
+        <div class="interest-item reveal"><span class="interest-icon">🤖</span><span>AI Systems</span></div>
+        <div class="interest-item reveal"><span class="interest-icon">🔐</span><span>Cybersecurity</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-intro">
+            I'm currently open to internship opportunities, collaborations, and interesting conversations about Android, AI, and building things that matter.
+          </p>
+          <div class="contact-items">
+            <a href="mailto:shuaibuddowla.personal@gmail.com" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">shuaibuddowla.personal@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+8801626264596" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+880 1626 264596</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Santosh, Tangail, Bangladesh</span>
+              </div>
+            </div>
+            <a href="https://github.com/shuaibuddowla" target="_blank" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/shuaibuddowla</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-cta reveal">
+          <div class="cta-card">
+            <div class="cta-pulse"></div>
+            <h3>Ready to collaborate?</h3>
+            <p>Whether it's an internship, a project idea, or just a chat about tech — feel free to reach out.</p>
+            <a href="mailto:shuaibuddowla.personal@gmail.com" class="btn btn--primary btn--lg">
+              Send an Email
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <span class="footer-logo">&lt;Shuaib /&gt;</span>
+        <span class="footer-sep">·</span>
+        Built with passion and AI assistance
+        <span class="footer-sep">·</span>
+        © 2025 Shuaib Ud Dowla
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
