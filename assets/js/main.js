@@ -206,7 +206,7 @@ animateParticles();
 
 // ── Typewriter ───────────────────────────────────────────────
 const phrases = [
-  'AI-Assisted Software Builder',
+  'CSE Undergraduate | Student Developer',
   'Android / Firebase Developer',
   'LLM Workflow Enthusiast',
   'Problem Solver & Builder',
