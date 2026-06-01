@@ -206,10 +206,8 @@ animateParticles();
 
 // ── Typewriter ───────────────────────────────────────────────
 const phrases = [
-  'CSE Undergraduate | Student Developer',
-  'Android & Firebase Project Builder',
-  'AI-Assisted Project Developer',
-  'Learning by Building Real Apps',
+  'CSE Undergraduate',
+  'Student Developer',
 ];
 let phraseIdx = 0, charIdx = 0, deleting = false;
 const tw = document.getElementById('typewriter');
