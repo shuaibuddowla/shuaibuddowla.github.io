@@ -43,37 +43,55 @@ function cssVar(name) {
 
 const dot  = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
+const hasDesktopCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 let mouseX = 0, mouseY = 0;
 let ringX   = 0, ringY  = 0;
 let lastDropTime = 0;
 let dropIndex = 0;
 
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  if (dot) {
-    dot.style.left = mouseX + 'px';
-    dot.style.top  = mouseY + 'px';
-  }
+if (hasDesktopCursor) {
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (dot) {
+      dot.style.left = mouseX + 'px';
+      dot.style.top  = mouseY + 'px';
+    }
 
-  const now = performance.now();
-  if (now - lastDropTime > 34) {
-    spawnCursorDrop(mouseX, mouseY);
-    lastDropTime = now;
-  }
-});
+    const now = performance.now();
+    if (now - lastDropTime > 34) {
+      spawnCursorDrop(mouseX, mouseY);
+      lastDropTime = now;
+    }
+  });
 
-(function animateRing() {
-  ringX += (mouseX - ringX) * 0.14;
-  ringY += (mouseY - ringY) * 0.14;
-  if (ring) {
-    ring.style.left = ringX + 'px';
-    ring.style.top  = ringY + 'px';
-  }
-  requestAnimationFrame(animateRing);
-})();
+  (function animateRing() {
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
+    if (ring) {
+      ring.style.left = ringX + 'px';
+      ring.style.top  = ringY + 'px';
+    }
+    requestAnimationFrame(animateRing);
+  })();
+
+  document.querySelectorAll('a, button, .skill-card, .project-card, .achievement-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (dot) dot.style.transform = 'translate(-50%,-50%) rotate(45deg) scale(1.5)';
+      if (ring) ring.style.transform = 'translate(-50%,-50%) scale(1.3)';
+    });
+    el.addEventListener('mouseleave', () => {
+      if (dot) dot.style.transform = 'translate(-50%,-50%) rotate(45deg) scale(1)';
+      if (ring) ring.style.transform = 'translate(-50%,-50%) scale(1)';
+    });
+  });
+} else {
+  dot?.remove();
+  ring?.remove();
+}
 
 function spawnCursorDrop(x, y) {
+  if (!hasDesktopCursor) return;
   const drop = document.createElement('span');
   const colors = [cssVar('--cursor-drop-1'), cssVar('--cursor-drop-2'), cssVar('--cursor-drop-3'), cssVar('--accent')];
   const angle = dropIndex * 2.399 + Math.random() * 0.7;
@@ -91,18 +109,6 @@ function spawnCursorDrop(x, y) {
   dropIndex += 1;
   drop.addEventListener('animationend', () => drop.remove(), { once: true });
 }
-
-// Make cursor interactive on clickable elements
-document.querySelectorAll('a, button, .skill-card, .project-card, .achievement-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    if (dot) dot.style.transform = 'translate(-50%,-50%) scale(1.5)';
-    if (ring) ring.style.transform = 'translate(-50%,-50%) scale(1.3)';
-  });
-  el.addEventListener('mouseleave', () => {
-    if (dot) dot.style.transform = 'translate(-50%,-50%) scale(1)';
-    if (ring) ring.style.transform = 'translate(-50%,-50%) scale(1)';
-  });
-});
 
 // ── Particle Canvas ──────────────────────────────────────────
 const canvas = document.getElementById('particleCanvas');
