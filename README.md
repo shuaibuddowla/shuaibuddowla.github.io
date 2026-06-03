@@ -1,6 +1,6 @@
 # Shuaib Ud Dowla Portfolio
 
-Static personal portfolio for Shuaib Ud Dowla, an AI-assisted software builder focused on Android, Firebase, AI agents, and LLM workflows.
+Static personal portfolio for Shuaib Ud Dowla, a CSE undergradute and student developer focused on Android, Firebase, AI agents, and LLM workflows.
 
 ## Live Site
 
