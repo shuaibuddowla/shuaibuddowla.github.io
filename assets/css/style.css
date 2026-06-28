@@ -976,3 +976,172 @@ body:has(button:hover) .cursor-ring { width: 46px; height: 46px; opacity: 1; }
   .hero-tagline br { display: none; }
   .project-featured { padding: 1.5rem; }
 }
+
+/* ============================================================
+   WORKFLOW SECTION & APK BUTTONS
+   ============================================================ */
+
+/* APK Buttons & Links Adjustments */
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.btn--apk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn--apk svg {
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.btn--apk:hover svg {
+  transform: translateY(2px);
+}
+
+/* Light Theme tweaks for APK buttons */
+[data-theme="light"] .btn--apk {
+  border-color: var(--green);
+  color: var(--green);
+}
+[data-theme="light"] .btn--apk:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Workflow Section styling */
+.workflow-intro {
+  max-width: 800px;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+}
+
+.workflow-pipeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+/* Connective line between steps on desktop */
+@media (min-width: 901px) {
+  .workflow-pipeline::before {
+    content: '';
+    position: absolute;
+    top: 2.25rem;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.15),
+      rgba(59, 130, 246, 0.15) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    z-index: 1;
+  }
+}
+
+.workflow-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workflow-step:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.8;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.step-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.step-role {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+}
+
+.step-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+}
+
+[data-theme="light"] .step-details {
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+.step-details li {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-details li::before {
+  content: '⚡';
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+/* Responsiveness for Workflow Pipeline */
+@media (max-width: 900px) {
+  .workflow-pipeline {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
