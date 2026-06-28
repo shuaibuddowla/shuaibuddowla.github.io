@@ -231,7 +231,7 @@ const revealObserver = new IntersectionObserver(entries => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
       const el = entry.target;
-      const delay = el.closest('.skills-grid, .projects-grid, .achievements-grid, .interests-grid')
+      const delay = el.closest('.skills-grid, .projects-grid, .achievements-grid, .interests-grid, .workflow-pipeline')
         ? Array.from(el.parentElement.querySelectorAll('.reveal')).indexOf(el) * 80
         : 0;
       setTimeout(() => el.classList.add('visible'), delay);
